@@ -1,5 +1,5 @@
 #!/bin/bash
-ICON=$HOME/.i3/key2.png
+ICON=$HOME/.i3/key.png
 TMPBG=/tmp/screen.png
 scrot /tmp/screen.png
 convert $TMPBG -scale 10% -scale 1000% $TMPBG

@@ -13,7 +13,7 @@
 
 IMAGE=/tmp/i3lock.png
 SCREENSHOT="scrot $IMAGE" # 0.46s
-ICON=$HOME/.i3/key2.png
+ICON=$HOME/.i3/key.png
 #ICON=$HOME/Pictures/magi.gif
 # Alternate screenshot method with imagemagick. NOTE: it is much slower
 # SCREENSHOT="import -window root $IMAGE" # 1.35s
@@ -31,6 +31,8 @@ BLURTYPE="2x8" # 2.90s
 # Get the screenshot, add the blur and lock the screen with it
 $SCREENSHOT
 convert $IMAGE -blur $BLURTYPE $IMAGE
+#convert $IMAGE -modulate 30 $IMAGE
+convert $IMAGE -fill black -colorize 75 $IMAGE
 convert $IMAGE $ICON -gravity center -composite -matte $IMAGE
 i3lock -u -i $IMAGE
 rm $IMAGE
